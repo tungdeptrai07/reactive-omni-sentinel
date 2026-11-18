@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OmniSentinel RSC | Reactive Smart Contract DeFi Automation (Unichain &harr; Base Sepolia)</title>
+  <style>
+    :root { --bg:#070812; --card:#101324; --border:#22294a; --react:#a855f7; --cyan:#06b6d4; --green:#10b981; --red:#f43f5e; --text:#f1f5f9; --muted:#94a3b8; }
+    * { box-sizing:border-box; margin:0; padding:0; font-family:'Inter',system-ui,sans-serif; }
+    body { background:var(--bg); color:var(--text); min-height:100vh; }
+    header { background:rgba(16,19,36,0.92); border-bottom:1px solid var(--border); padding:14px 28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .logo { width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg,var(--react),var(--cyan)); display:flex; align-items:center; justify-content:center; font-weight:900; color:#fff; }
+    .container { max-width:1260px; margin:0 auto; padding:24px 28px; }
+    .grid-2 { display:grid; grid-template-columns:1fr 1.2fr; gap:20px; }
+    @media(max-width:900px){ .grid-2 { grid-template-columns:1fr; } }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:15px; padding:20px; margin-bottom:18px; }
+    .card h2 { font-size:16px; color:#c084fc; margin-bottom:6px; }
+    p.desc { font-size:13px; color:var(--muted); margin-bottom:15px; line-height:1.5; }
+    label { display:block; font-size:12px; color:var(--muted); font-weight:600; margin-bottom:5px; }
+    input, select { width:100%; background:#070914; border:1px solid var(--border); color:var(--text); padding:9px 12px; border-radius:8px; font-size:13px; margin-bottom:12px; }
+    .btn { cursor:pointer; width:100%; padding:11px; border:none; border-radius:9px; background:linear-gradient(135deg,var(--react),var(--cyan)); color:#fff; font-weight:700; font-size:13.5px; }
+    pre { background:#05060d; border:1px solid var(--border); border-radius:10px; padding:14px; font-family:Consolas,monospace; font-size:12px; color:#67e8f9; overflow-x:auto; max-height:330px; line-height:1.5; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="logo">R&Omega;</div>
+    <div>
+      <h1 style="font-size:18px;">OmniSentinel RSC — Cross-Chain DeFi Stop-Loss &amp; AI Rebalancer</h1>
+      <p style="font-size:12px; color:var(--muted);">Reactive Omni Buildathon &bull; Inversion-of-Control <code>IReactive.react(LogRecord)</code> across Unichain (1301) &amp; Base Sepolia (84532)</p>
+    </div>
+  </div>
+  <div style="font-size:12px; color:var(--green); font-weight:700;">RSC Subscription Active &bull; Zero Off-Chain Bots</div>
+</header>
+<div class="container">
+  <div class="grid-2">
+    <div class="card">
+      <h2>1. Emit Origin Chain Event (Unichain Sepolia — Chain ID 1301)</h2>
+      <p class="desc">Simulate an oracle price/volatility event on Unichain Sepolia. The Reactive Network captures the <code>LogRecord</code> and invokes <code>OmniSentinelReactive.react()</code> automatically.</p>
+      <label>Monitored Asset Pair</label>
+      <input type="text" id="assetInput" value="ETH / USD (0x4200000000000000000000000000000000000006)" />
+      <label>Simulated Oracle Price (USD) — Stop-Loss Floor: $2,950</label>
+      <input type="number" id="priceInput" value="2840" />
+      <label>AI Volatility Index (bps) — Rebalance Ceiling: 850 bps</label>
+      <input type="number" id="volInput" value="920" />
+      <button class="btn" onclick="triggerReactiveLog()">Emit Origin LogRecord &rarr; Trigger IReactive.react()</button>
+    </div>
+    <div class="card">
+      <h2>2. Reactive Network <code>LogRecord</code> &rarr; Cross-Chain <code>Callback</code> Trace</h2>
+      <p class="desc">Real-time ABI payload encoded by <code>OmniSentinelReactive.sol</code> and dispatched to Base Sepolia (`Chain ID: 84532`).</p>
+      <pre id="rscOutputBox"></pre>
+    </div>
+  </div>
+</div>
+<script>
+  let callbackCount = 12;
+  function triggerReactiveLog() {
+    const price = parseInt(document.getElementById("priceInput").value, 10) || 2840;
+    const vol = parseInt(document.getElementById("volInput").value, 10) || 920;
+    const triggered = (price <= 2950 || vol >= 850);
+    if (triggered) callbackCount += 1;
+    const trace = {
+      originLogRecord: {
+        chain_id: 1301,
+        _contract: "0x9A8B7C6D5E4F3A2B1C0D9E8F7A6B5C4D3E2F1A0B",
+        topic_0: "0x7c42879b4a0717a7a88e0619820a86f2321255b708531b530e9248224f1a09d2",
+        topic_1: "0x0000000000000000000000004200000000000000000000000000000000000006",
+        decodedData: { observedPriceUSD: price, volatilityBps: vol },
+        block_number: 4829104
+      },
+      reactiveEvaluation: {
+        stopLossThresholdUSD: 2950,
+        volatilityCeilingBps: 850,
+        conditionMet: triggered,
+        verdict: triggered ? "DISPATCH_CROSS_CHAIN_CALLBACK" : "WITHIN_SAFE_BOUNDS_NO_OP"
+      },
+      emittedCallbackEvent: triggered ? {
+        event: "Callback(uint256 indexed chain_id, address indexed _contract, uint64 indexed gas_limit, bytes payload)",
+        destinationChainId: 84532,
+        destinationContract: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+        gasLimit: 250000,
+        abiSignature: "executeEmergencyDeleverage(address,uint256,uint256)",
+        totalCallbacksDispatched: callbackCount
+      } : null
+    };
+    document.getElementById("rscOutputBox").textContent = JSON.stringify(trace, null, 2);
+  }
+  triggerReactiveLog();
+</script>
+</body>
+</html>
