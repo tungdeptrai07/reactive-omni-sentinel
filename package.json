@@ -1,0 +1,29 @@
+{
+  "name": "reactive-omni-sentinel",
+  "version": "2.0.0",
+  "description": "OmniSentinel RSC — Sub-Second Cross-Chain DeFi Stop-Loss & Volatility Shield on Reactive Omni (Unichain Sepolia <-> Reactive Lasna <-> Base Sepolia)",
+  "type": "module",
+  "scripts": {
+    "compile": "node scripts/compile.mjs",
+    "test": "node --test --test-concurrency=1 tests/omni_sentinel.test.mjs tests/server.test.mjs",
+    "deploy:testnet": "node scripts/deploy_and_measure.mjs",
+    "serve": "node server.mjs"
+  },
+  "keywords": [
+    "reactive-network",
+    "reactive-omni",
+    "unichain-sepolia",
+    "base-sepolia",
+    "defi",
+    "cross-chain",
+    "dorahacks"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "ethers": "^6.13.4",
+    "solc": "^0.8.24"
+  },
+  "devDependencies": {
+    "ganache": "^7.9.2"
+  }
+}

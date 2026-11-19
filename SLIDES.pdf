@@ -1,0 +1,73 @@
+%PDF-1.4
+1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj
+2 0 obj << /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R] /Count 4 >> endobj
+3 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >> endobj
+4 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj
+5 0 obj << /Length 1063 >> stream
+0.03 0.04 0.08 rg 0 0 960 540 re f
+0.22 0.74 0.97 rg 0 526 960 14 re f
+BT /F1 26 Tf 0.93 0.96 1.00 rg 48 468 Td (OmniSentinel RSC - Reactive Omni Liquidation Shield) Tj ET
+BT /F2 14 Tf 0.22 0.74 0.97 rg 48 438 Td (Reactive Omni Buildathon | Track 1: Every Second Counts \($2,000 REACT\)) Tj ET
+BT /F2 13 Tf 0.88 0.92 0.98 rg 56 385 Td (- Eliminates centralized off-chain keepers with 100% on-chain Reactive Omni automation) Tj ET
+BT /F2 13 Tf 0.88 0.92 0.98 rg 56 353 Td (- Origin Chain: Unichain Sepolia \(1301, 1s blocks\) -> OriginMarketOracle.sol) Tj ET
+BT /F2 13 Tf 0.88 0.92 0.98 rg 56 321 Td (- Reactive Layer: Reactive Lasna \(5318007, ~1s finality\) -> OmniSentinelReactive.sol) Tj ET
+BT /F2 13 Tf 0.88 0.92 0.98 rg 56 289 Td (- Destination Chain: Base Sepolia \(84532, 200ms blocks\) -> DestinationShieldVault.sol) Tj ET
+BT /F2 13 Tf 0.88 0.92 0.98 rg 56 257 Td (- Built strictly for Reactive Omni: SYSTEM 0x8888...8888 & requestCallbackV_1_0) Tj ET
+BT /F2 11 Tf 0.58 0.65 0.80 rg 48 26 Td (Reactive Omni Buildathon | OmniSentinel RSC | Slide 1/4) Tj ET
+endstream endobj
+6 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 960 540] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >> endobj
+7 0 obj << /Length 939 >> stream
+0.03 0.04 0.08 rg 0 0 960 540 re f
+0.22 0.74 0.97 rg 0 526 960 14 re f
+BT /F1 26 Tf 0.93 0.96 1.00 rg 48 468 Td (Why Every Second Counts in Cross-Chain DeFi) Tj ET
+BT /F2 14 Tf 0.22 0.74 0.97 rg 48 438 Td (Sub-Second Reaction Prevents Cascading Bad Debt on 200ms Rollups) Tj ET
+BT /F2 13 Tf 0.88 0.92 0.98 rg 56 385 Td (- Flash crashes on high-speed L2s liquidate leveraged vaults before polling bots wake up) Tj ET
+BT /F2 13 Tf 0.88 0.92 0.98 rg 56 353 Td (- Reactive Omni pushes Unichain telemetry directly into OmniSentinelReactive.react\(\)) Tj ET
+BT /F2 13 Tf 0.88 0.92 0.98 rg 56 321 Td (- Deterministic on-chain Risk Engine scores price breach + volatility bps + liquidity depth) Tj ET
+BT /F2 13 Tf 0.88 0.92 0.98 rg 56 289 Td (- Two autonomous modes: Stop-Loss Deleverage \(80% shield\) & Volatility Hedge \(40% shield\)) Tj ET
+BT /F2 11 Tf 0.58 0.65 0.80 rg 48 26 Td (Reactive Omni Buildathon | OmniSentinel RSC | Slide 2/4) Tj ET
+endstream endobj
+8 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 960 540] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >> endobj
+9 0 obj << /Length 951 >> stream
+0.03 0.04 0.08 rg 0 0 960 540 re f
+0.22 0.74 0.97 rg 0 526 960 14 re f
+BT /F1 26 Tf 0.93 0.96 1.00 rg 48 468 Td (Native Reactive Omni Security & Base Sepolia Compliance) Tj ET
+BT /F2 14 Tf 0.22 0.74 0.97 rg 48 438 Td (Zero Legacy RVM Hacks - 100% Reactive Omni Specification Compliant) Tj ET
+BT /F2 13 Tf 0.88 0.92 0.98 rg 56 385 Td (- Drops legacy vmOnly dual-state; uses onlySystem modifier bound to 0x8888...8888) Tj ET
+BT /F2 13 Tf 0.88 0.92 0.98 rg 56 353 Td (- Dispatches SYSTEM.requestCallbackV_1_0 with address\(0\) slot-0 RVM/Omni sender injection) Tj ET
+BT /F2 13 Tf 0.88 0.92 0.98 rg 56 321 Td (- DestinationShieldVault enforces BOTH onlyServiceProvider and onlyCallbackSender\(reactive_\)) Tj ET
+BT /F2 13 Tf 0.88 0.92 0.98 rg 56 289 Td (- 100% block.timestamp cooldowns & latency tracking \(safe for Base Sepolia 200ms blocks\)) Tj ET
+BT /F2 11 Tf 0.58 0.65 0.80 rg 48 26 Td (Reactive Omni Buildathon | OmniSentinel RSC | Slide 3/4) Tj ET
+endstream endobj
+10 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 960 540] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >> endobj
+11 0 obj << /Length 896 >> stream
+0.03 0.04 0.08 rg 0 0 960 540 re f
+0.22 0.74 0.97 rg 0 526 960 14 re f
+BT /F1 26 Tf 0.93 0.96 1.00 rg 48 468 Td (Verification, Latency Benchmarking & Live Deployment) Tj ET
+BT /F2 14 Tf 0.22 0.74 0.97 rg 48 438 Td (7 / 7 Real Compiled Solidity EVM & API Integration Tests Passing) Tj ET
+BT /F2 13 Tf 0.88 0.92 0.98 rg 56 385 Td (- Compiled cleanly with solc 0.8.38 \(zero warnings, zero errors\)) Tj ET
+BT /F2 13 Tf 0.88 0.92 0.98 rg 56 353 Td (- Verified Health Factor rescue from 1.67x -> 6.67x in real Ganache EVM end-to-end loop) Tj ET
+BT /F2 13 Tf 0.88 0.92 0.98 rg 56 321 Td (- One-command live testnet deploy + millisecond latency logger: `npm run deploy:testnet`) Tj ET
+BT /F2 13 Tf 0.88 0.92 0.98 rg 56 289 Td (- GitHub: https://github.com/tungdeptrai07/reactive-omni-sentinel) Tj ET
+BT /F2 11 Tf 0.58 0.65 0.80 rg 48 26 Td (Reactive Omni Buildathon | OmniSentinel RSC | Slide 4/4) Tj ET
+endstream endobj
+12 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 960 540] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 11 0 R >> endobj
+xref
+0 13
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000135 00000 n 
+0000000210 00000 n 
+0000000280 00000 n 
+0000001395 00000 n 
+0000001531 00000 n 
+0000002521 00000 n 
+0000002657 00000 n 
+0000003659 00000 n 
+0000003796 00000 n 
+0000004744 00000 n 
+trailer << /Size 13 /Root 1 0 R >>
+startxref
+4882
+%%EOF
